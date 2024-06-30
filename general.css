@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+html {
+  /* use 16px ratio for 1 rem  */
+  font-size: 62.5%;
+  font-family: roboto, Times, serif;
+  background-color: #686a6b;
+}
+
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+.margin--bottom {
+  margin-bottom: 2rem;
+}
+.sectionCenter {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3rem;
+  max-width: 120rem;
+}
+.tCenter {
+  text-align: center;
+}
+
+.text {
+  line-height: 1.3;
+  font-size: 1.6rem;
+}
+.head {
+  font-size: 1.8rem;
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-1-cols {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
