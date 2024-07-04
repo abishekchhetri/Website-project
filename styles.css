@@ -1,4 +1,15 @@
 /* Home navbar section  */
+.headerGrid {
+  width: 100%;
+}
+
+/*STICKY NAVBAR SECTION */
+.stickyNav {
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(31, 26, 26, 0.6);
+}
+/*****************/
 .logoContent {
   display: flex;
   font-size: 1.8rem;
@@ -45,7 +56,7 @@
   width: 50vw;
   background-color: blueviolet;
   position: relative;
-  background-image: url(images/f1.png);
+  background-image: url(images/bigImg/f1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -97,8 +108,6 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 1.5rem;
-  background-color: grey;
-  padding: 1.2rem;
 }
 .a,
 .b,
@@ -143,17 +152,14 @@
 }
 /*************************************/
 /* Academics SECTION */
-.academics {
-  /* parent of card */
-}
 .cardGrid {
   justify-items: center;
-  row-gap: 2.5rem;
+  gap: 1rem;
 }
 .card {
-  border: solid thin red;
+  /* border: solid thin red; */
   height: 28rem;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -162,15 +168,16 @@
   width: 100%;
   height: 25rem;
   background-color: blueviolet;
-  background-image: url("images/f1.png");
+  background-image: url("images/bigImg/f1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 .cardFlex {
   display: flex;
   flex-direction: row;
-  border: solid thin red;
+  /* border: solid thin red; */
   align-content: center;
   height: 3rem;
 }
@@ -205,4 +212,236 @@
 
 .hide .cardFlex .button-close {
   display: none;
+}
+
+/* Facilities SECTION */
+.facilityPic {
+  height: 25rem;
+  width: 90%;
+  background-image: url("images/bigImg/f3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: ease all 100ms;
+}
+.facilityPic:active {
+  transform: scale(1.2, 1.1);
+}
+.facilityCard {
+  gap: 2rem;
+  display: flex;
+  background-color: rgb(80, 65, 65);
+  padding: 1rem;
+}
+
+.facilityCard:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+/* SINCE I HAD SEVERAL .facilityCard classes I can select odd child and change their order : yep I did it successfully! */
+.facilityCard:nth-child(odd) .facilityPic {
+  order: 1;
+}
+/* ********************************************************/
+
+/* SECTION ECA GALLERY */
+.ecaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+}
+.eca-img {
+  width: 10rem;
+  height: 8rem;
+  background-color: lightseagreen;
+  border: solid thin pink;
+  background-position: center;
+  background-size: cover;
+}
+.ecaTxt {
+  flex: 1;
+}
+.eca {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainEca {
+  display: flex;
+  gap: 2rem;
+  /* flex-direction: row; */
+}
+.enlarge {
+  transition: all ease-in-out 0.5s;
+}
+.hideEca .enlarge {
+  position: absolute;
+  max-width: 600px;
+  width: 90%;
+  height: 30rem;
+  z-index: 80;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  /* background-color: lightgreen; */
+  transition: linear all 0.5s;
+}
+
+.hideEca .mainEca {
+  filter: blur(0.5rem);
+  /* filter: brightness(0.1); */
+  /* pointer-events: none; */
+  transition: ease all 0.3s;
+} /* ****************************************************** */
+
+/* ****************MESSAGE OF LEADERSHIP**************/
+.leaders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.slide {
+  background-color: rgba(206, 112, 127, 0.466);
+  padding: 2rem 3rem;
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.imgLeader {
+  background-image: url("images/eca/e1.png");
+  background-position: center;
+  background-size: cover;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: solid white 4px;
+}
+
+.desc {
+  text-align: justify;
+}
+/* *************************************************** */
+.contactBox {
+  display: flex;
+  /* justify-content: flex-start; */
+  cursor: pointer;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contactBox > * {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.contactBox > * a:active,
+.contactBox > * a:hover {
+  color: whitesmoke;
+}
+
+.contactIcon {
+  width: 2rem;
+  height: 2rem;
+}
+.contactIcon:hover {
+  transform: scale(1.3);
+}
+
+.pno {
+  display: none;
+}
+.numberShow .pno {
+  display: block;
+  position: absolute;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 10%);
+  z-index: 9;
+  border: solid thin silver;
+}
+
+.pno > * {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.pno > *:active,
+.pno > *:hover {
+  color: #1c7ed6;
+  background-color: rgba(211, 211, 211, 0.575);
+  transition: 0.5s ease all;
+}
+.contacts {
+  position: relative;
+}
+.numberShow .contactBox {
+  filter: blur(3px);
+  pointer-events: none;
+}
+.cancelPn {
+  background-color: rgb(231, 45, 45);
+  color: white;
+  transition: ease 1s all;
+  text-align: center;
+}
+.cancelPn:active,
+.cancelPn:hover {
+  background-color: rgb(231, 45, 45);
+  color: white;
+  cursor: pointer;
+}
+.phone p {
+  margin-bottom: 0;
+}
+.navReloaded {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.navReloaded > * {
+  text-decoration: none;
+  color: black;
+}
+.navReloaded > *:hover,
+.navReloaded > *:active {
+  color: whitesmoke;
+}
+.last-list {
+  list-style-type: none;
+}
+.last-list > *:hover {
+  color: whitesmoke;
+}
+.gridLast {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.lastLogo {
+  background-image: url("images/topNav/schoolLogo.png");
+  background-position: center;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  transform: translateX(50%);
+}
+
+.gridLast > * {
+  padding: 2rem;
 }

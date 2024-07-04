@@ -12,8 +12,12 @@ html {
   font-size: 62.5%;
   font-family: roboto, Times, serif;
   background-color: #686a6b;
+  scroll-behavior: smooth;
 }
-
+.linkReset {
+  text-decoration: none;
+  color: black;
+}
 .margin-bottom {
   margin-bottom: 1rem;
 }
@@ -21,10 +25,14 @@ html {
   margin-bottom: 2rem;
 }
 .sectionCenter {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 3rem;
-  max-width: 120rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 2rem 3rem !important;
+  max-width: 120rem !important;
+}
+.sectionBox {
+  background-color: grey;
+  padding: 1.2rem;
 }
 .tCenter {
   text-align: center;
@@ -49,4 +57,7 @@ html {
 .grid-1-cols {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+}
+.scale:active {
+  transform: scale(1.2, 1.1);
 }

@@ -40,7 +40,7 @@ setInterval(() => {
   } else {
     flag++;
   }
-  big.style.backgroundImage = `url(images/f${flag}.png)`;
+  big.style.backgroundImage = `url(images/bigImg/f${flag}.png)`;
   changeDot(flag);
 }, 4000);
 
@@ -52,7 +52,7 @@ rightButton.addEventListener("click", () => {
     flag++;
   }
   setTimeout(() => {
-    big.style.backgroundImage = `url(images/f${flag}.png)`;
+    big.style.backgroundImage = `url(images/bigImg/f${flag}.png)`;
     changeDot(flag);
   }, 150);
 });
@@ -65,7 +65,7 @@ leftButton.addEventListener("click", () => {
   }
 
   setTimeout(() => {
-    big.style.backgroundImage = `url(images/f${flag}.png)`;
+    big.style.backgroundImage = `url(images/bigImg/f${flag}.png)`;
     changeDot(flag);
   }, 150);
 });
@@ -77,3 +77,56 @@ for (let i = 0; i < btn.length; i++)
   btn[i].addEventListener("click", () => {
     cd[i].classList.toggle("hide");
   });
+
+//sticking the navigation after 1vh used method : window.innerHeight;
+
+window.addEventListener("scroll", () => {
+  if (window.innerHeight - 200 < window.scrollY) {
+    openCloseButton.classList.add("stickyNav");
+  } else openCloseButton.classList.remove("stickyNav");
+});
+
+document.querySelector(".nav--container").addEventListener("click", () => {
+  openCloseButton.classList.toggle("hidden");
+});
+
+//eca grid section
+
+let g = document.querySelectorAll(".eca-img");
+let mainG = document.querySelector(".eca");
+let im = document.querySelector(".enlarge");
+
+im.addEventListener("click", () => {
+  mainG.classList.toggle("hideEca");
+});
+
+if (mainG.classList.contains("hideEca")) {
+  mainG.addEventListener("click", () => {
+    mainG.classList.toggle("hideEca");
+  });
+}
+
+for (let i = 0; i < g.length; i++) {
+  g[i].style.backgroundImage = `url(images/eca/e${i + 1}.png)`;
+  g[i].addEventListener("click", () => {
+    mainG.classList.toggle("hideEca");
+
+    im.style.backgroundImage = `url(images/eca/e${i + 1}.png)`;
+  });
+}
+
+//contacts section
+let contact = document.querySelector(".contacts");
+let phone = document.querySelector(".phone");
+let cancel = document.querySelector(".cancelPn");
+phone.addEventListener("click", () => {
+  contact.classList.toggle("numberShow");
+});
+
+cancel.addEventListener("click", () => {
+  contact.classList.toggle("numberShow");
+});
+
+// contact.addEventListener("click", () => {
+//   contact.classList.remove("numberShow");
+// });
